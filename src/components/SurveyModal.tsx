@@ -223,9 +223,22 @@ export function SurveyModal({
 
       <style>{`
         .survey-modal-backdrop {
+          --cyguin-bg: #0a0d17;
+          --cyguin-bg-subtle: #101521;
+          --cyguin-border: #252b3a;
+          --cyguin-fg: #f1f3f6;
+          --cyguin-fg-muted: #858b98;
+          --cyguin-accent: #ffd21f;
+          --cyguin-accent-dark: #e0a900;
+          --cyguin-accent-fg: #0a0d17;
+          --cyguin-modal-bg: var(--cyguin-bg);
+          --cyguin-modal-border: var(--cyguin-border);
+          --cyguin-text-primary: var(--cyguin-fg);
+          --cyguin-text-secondary: var(--cyguin-fg-muted);
+          --cyguin-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(6, 8, 17, 0.72);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -303,14 +316,14 @@ export function SurveyModal({
         }
 
         .survey-nps-btn:hover {
-          border-color: var(--cyguin-accent, #3b82f6);
-          color: var(--cyguin-accent, #3b82f6);
+          border-color: var(--cyguin-accent, #ffd21f);
+          color: var(--cyguin-accent, #ffd21f);
         }
 
         .survey-nps-btn.active {
-          background: var(--cyguin-accent, #3b82f6);
-          border-color: var(--cyguin-accent, #3b82f6);
-          color: #ffffff;
+          background: var(--cyguin-accent, #ffd21f);
+          border-color: var(--cyguin-accent, #ffd21f);
+          color: var(--cyguin-accent-fg, #0a0d17);
         }
 
         .survey-nps-labels {
@@ -339,16 +352,16 @@ export function SurveyModal({
         }
 
         .survey-mc-option:hover {
-          border-color: var(--cyguin-accent, #3b82f6);
+          border-color: var(--cyguin-accent, #ffd21f);
         }
 
         .survey-mc-option:has(input:checked) {
-          border-color: var(--cyguin-accent, #3b82f6);
-          background: color-mix(in srgb, var(--cyguin-accent, #3b82f6) 10%, transparent);
+          border-color: var(--cyguin-accent, #ffd21f);
+          background: color-mix(in srgb, var(--cyguin-accent, #ffd21f) 10%, transparent);
         }
 
         .survey-mc-option input[type="radio"] {
-          accent-color: var(--cyguin-accent, #3b82f6);
+          accent-color: var(--cyguin-accent, #ffd21f);
         }
 
         .survey-text {
@@ -362,6 +375,7 @@ export function SurveyModal({
           border-radius: var(--cyguin-radius, 8px);
           font-size: 1rem;
           color: var(--cyguin-text-primary, #111827);
+          background: var(--cyguin-modal-bg, #ffffff);
           resize: none;
           font-family: inherit;
           box-sizing: border-box;
@@ -369,7 +383,7 @@ export function SurveyModal({
 
         .survey-text-input:focus {
           outline: none;
-          border-color: var(--cyguin-accent, #3b82f6);
+          border-color: var(--cyguin-accent, #ffd21f);
         }
 
         .survey-text-counter {
@@ -409,9 +423,9 @@ export function SurveyModal({
         }
 
         .survey-btn-next {
-          background: var(--cyguin-accent, #3b82f6);
-          border: 1px solid var(--cyguin-accent, #3b82f6);
-          color: #ffffff;
+          background: var(--cyguin-accent, #ffd21f);
+          border: 1px solid var(--cyguin-accent, #ffd21f);
+          color: var(--cyguin-accent-fg, #0a0d17);
         }
 
         .survey-btn-next:hover:not(:disabled) {
