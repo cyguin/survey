@@ -1,10 +1,10 @@
 # @cyguin/survey
 
-Post-action micro-survey system. Trigger structured 1-3 question modals on specific app events (cancel flow, post-upgrade, onboarding completion) and aggregate responses server-side.
+Post-action micro-surveys. Trigger a 1-3 question modal on specific app events — cancel flow, post-upgrade, onboarding complete — and aggregate responses server-side.
 
 ## The Deal
 
-`@cyguin/survey` gives you a lightweight survey system with three question types (NPS, multiple choice, short text), a drop-in React modal, and a server-side adapter interface for persistence.
+Three question types (NPS, multiple choice, short text), a drop-in React modal, a server-side adapter for persistence. That's it.
 
 ## Install
 
@@ -24,8 +24,8 @@ import { showSurvey } from '@cyguin/survey';
 const result = await showSurvey('churn-survey', userId);
 // result: { surveyId: string, questions: Question[] }
 
-const closeModal = result.modal?.(); // opens the SurveyModal
-// call closeModal() to programmatically dismiss
+const closeModal = result.modal?.(); // opens the modal
+// call closeModal() to dismiss programmatically
 ```
 
 ### Client: useSurveyModal hook
@@ -65,7 +65,6 @@ Place these in your Next.js app router:
 ```ts
 import { getSurveyAdapter, setSurveyAdapter } from '@cyguin/survey/adapter';
 
-// Implement the interface
 const myAdapter = {
   async findByTrigger(trigger) { /* ... */ },
   async getQuestions(surveyId) { /* ... */ },
@@ -107,7 +106,6 @@ interface SurveyConfig {
 
 - Next.js App Router (>=14)
 - React (>=18)
-- CSS custom properties (`--cyguin-*` tokens) for brand theming
 
 ## Status
 
