@@ -1,6 +1,6 @@
 {
   "name": "@cyguin/survey",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Post-action micro-survey system for triggering structured 1-3 question modals",
   "private": false,
   "type": "module",
@@ -15,6 +15,10 @@
     "./server": {
       "import": "./dist/lib/adapter.js",
       "types": "./dist/lib/adapter.d.ts"
+    },
+    "./adapters/sqlite": {
+      "import": "./dist/adapters/sqlite.js",
+      "types": "./dist/adapters/sqlite.d.ts"
     }
   },
   "files": [
@@ -23,7 +27,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsup src/index.ts src/lib/adapter.ts --format esm --dts",
+    "build": "rm -rf dist && tsup src/index.ts src/lib/adapter.ts 'src/adapters/sqlite.ts' --format esm --dts",
     "test": "vitest run",
     "pack:check": "npm pack --dry-run",
     "prepublishOnly": "npm run build && npm test && npm run pack:check"
@@ -59,5 +63,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cyguin/survey.git"
+  },
+  "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "better-sqlite3": "^12.10.0",
+    "nanoid": "^5.1.11"
   }
 }
