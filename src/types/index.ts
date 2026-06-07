@@ -48,6 +48,7 @@ export interface SurveyModalProps {
   userId: string;
   onComplete?: (answers: Answer[]) => void;
   onDismiss?: () => void;
+  theme?: 'light' | 'dark';
 }
 
 export interface SurveyConfig {

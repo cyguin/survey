@@ -20,6 +20,7 @@ export function SurveyModal({
   userId,
   onComplete,
   onDismiss,
+  theme = 'dark',
 }: SurveyModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
@@ -33,6 +34,7 @@ export function SurveyModal({
   const currentQuestion = sortedQuestions[currentIndex];
   const totalQuestions = sortedQuestions.length;
   const progress = `${currentIndex + 1} of ${totalQuestions}`;
+  const isDark = (theme ?? 'dark') === 'dark';
 
   const handleDismiss = useCallback(() => {
     setDismissed(true);
@@ -173,7 +175,7 @@ export function SurveyModal({
       : textValue.trim() !== '';
 
   return (
-    <div className="survey-modal-backdrop" onClick={handleDismiss}>
+    <div className="survey-modal-backdrop" data-theme={theme} onClick={handleDismiss}>
       <div
         className="survey-modal"
         onClick={(e) => e.stopPropagation()}
@@ -222,6 +224,20 @@ export function SurveyModal({
       </div>
 
       <style>{`
+        .survey-modal-backdrop[data-theme="light"] {
+          --cyguin-bg: #ffffff;
+          --cyguin-bg-subtle: #f5f5f5;
+          --cyguin-border: #e5e5e5;
+          --cyguin-fg: #0a0a0a;
+          --cyguin-fg-muted: #888888;
+          --cyguin-accent: #f5a800;
+          --cyguin-accent-dark: #c47f00;
+          --cyguin-accent-fg: #0a0a0a;
+          --cyguin-radius: 6px;
+          --cyguin-shadow: 0 1px 4px rgba(0,0,0,0.08);
+          --cyguin-danger: #dc2626;
+        }
+
         .survey-modal-backdrop {
           --cyguin-bg: #0a0d17;
           --cyguin-bg-subtle: #101521;
