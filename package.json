@@ -34,7 +34,9 @@
     "build": "rm -rf dist && tsup src/index.ts src/lib/adapter.ts src/adapters/sqlite.ts src/adapters/postgres.ts --format esm --dts",
     "test": "vitest run",
     "pack:check": "npm pack --dry-run",
-    "prepublishOnly": "npm run build && npm test && npm run pack:check"
+    "prepublishOnly": "npm run build && npm test && npm run pack:check",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
   },
   "peerDependencies": {
     "next": ">=14.0.0",
