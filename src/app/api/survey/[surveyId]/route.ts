@@ -1,8 +1,7 @@
-import type { NextRequest } from 'next/server';
 import { getSurveyAdapter } from '../../../../lib/adapter';
 
 export async function GET(
-  request: NextRequest,
+  request: Request,
   { params }: { params: Promise<{ surveyId: string }> }
 ) {
   try {

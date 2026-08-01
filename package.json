@@ -1,6 +1,6 @@
 {
   "name": "@cyguin/survey",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Post-action micro-survey system for triggering structured 1-3 question modals",
   "private": false,
   "type": "module",
@@ -39,15 +39,14 @@
     "lint": "tsc --noEmit"
   },
   "peerDependencies": {
-    "next": ">=14.0.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20.19.42",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "next": "^15.5.19",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tsup": "^8.3.0",
@@ -71,7 +70,6 @@
     "url": "git+https://github.com/cyguin/survey.git"
   },
   "dependencies": {
-    "@types/better-sqlite3": "^7.6.13",
     "better-sqlite3": "^12.10.0",
     "nanoid": "^5.1.11",
     "postgres": "^3.4.9"

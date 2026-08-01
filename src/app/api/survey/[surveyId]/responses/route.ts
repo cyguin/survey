@@ -1,10 +1,9 @@
-import type { NextRequest } from 'next/server';
 import { getSurveyAdapter } from '../../../../../lib/adapter';
 import type { SubmitRequest, SubmitResponse } from '../../../../../types';
 import { randomBytes } from 'crypto';
 
 export async function POST(
-  request: NextRequest,
+  request: Request,
   { params }: { params: Promise<{ surveyId: string }> }
 ) {
   try {

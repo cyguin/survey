@@ -1,8 +1,7 @@
-import type { NextRequest } from 'next/server';
 import { getSurveyAdapter } from '../../../../lib/adapter';
 import type { TriggerRequest, TriggerResponse } from '../../../../types';
 
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
   try {
     const body: TriggerRequest = await request.json();
 
