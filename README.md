@@ -1,3 +1,5 @@
+> **This package is no longer actively maintained.** cyguin has narrowed focus to security research (PSCryptoPatterns, PSCertPatterns, PSCMSPatterns). Existing published versions remain on npm and MIT-licensed, but no further releases are planned. See cyguin.com for current work.
+
 # @cyguin/survey
 
 Post-action micro-surveys. Trigger a 1-3 question modal on specific app events — cancel flow, post-upgrade, onboarding complete — and aggregate responses server-side.
